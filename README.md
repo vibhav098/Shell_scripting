@@ -17,7 +17,7 @@ To install cron run `sudo apt-get install cron`
 
 To add our current script file to cronjobs run `crontab -e`
 
-
+add `0 12 * * * <script_path> -s <Source_Directory> -d <Destination_Directory> -o <Output_File>` to file
 
 Before running the code make sure to create folders 'input' and 'output'.
 
