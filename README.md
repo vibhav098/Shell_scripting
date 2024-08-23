@@ -1,6 +1,6 @@
 # Shell_scripting
 ## Commands to run the code
-We used long options to run the code.
+
 | Options | Arguments | Requirement |
 | -------- | -------- | -------- |
 | s | Source Directory | Required |
