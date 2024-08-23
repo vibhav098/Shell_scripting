@@ -1,4 +1,8 @@
 # Shell_scripting
+## Overview
+The script is designed to back up files from a source directory to a destination directory, while ensuring that only updated or new files are copied. 
+It tracks the number of changed files and logs the execution time to a specified output file.
+
 ## Commands to run the code
 
 | Options | Arguments | Requirement |
