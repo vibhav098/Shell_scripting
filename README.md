@@ -11,13 +11,15 @@ We used long options to run the code.
 
 To Run use `./Assignment_1.sh -s <Source_Directory> -d <Destination_Directory> -o(optional) <Output_File>`.
 
-## Setting up CronJobs to backup Every day 
+## Setting up CronJobs
 
 To install cron run `sudo apt-get install cron`
 
 To add our current script file to cronjobs run `crontab -e`
 
-add `0 12 * * * <script_path> -s <Source_Directory> -d <Destination_Directory> -o <Output_File>` to file
+To run script file at 12 a.m Everyday
+
+Add the line to the file `0 12 * * * <script_path> -s <Source_Directory> -d <Destination_Directory> -o <Output_File>`
 
 Before running the code make sure to create folders 'input' and 'output'.
 
