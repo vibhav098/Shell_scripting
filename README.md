@@ -21,8 +21,3 @@ To run script file at 12 a.m Everyday
 
 Add the line to the file `0 12 * * * <script_path> -s <Source_Directory> -d <Destination_Directory> -o <Output_File>`
 
-Before running the code make sure to create folders 'input' and 'output'.
-
-Here 'input' folder contains files 'ICache.txt' , 'DCache.txt' , 'RF.txt'.
-
-And 'output' folder contains files 'Output.txt' , 'DCache.txt' , 'RF.txt' after execution of code.
