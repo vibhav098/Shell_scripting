@@ -19,7 +19,7 @@ To Run use `./Assignment_1.sh -s <Source_Directory> -d <Destination_Directory> -
 
 To install cron run `sudo apt-get install cron`
 
-To add our current script file to cronjobs run `crontab -e`
+Run `crontab -e` to view the currently executing cronjobs
 
 To run script file at 12 a.m Everyday
 
