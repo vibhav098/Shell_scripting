@@ -9,29 +9,11 @@ This shell script is designed to back up files that contains a vowel from a sour
 
 ## Output Log File
 
-- **Format**: The output log file will be in `.csv` format. If the file is being created for the first time, it's recommended to delete any existing file to ensure labels are added correctly.
+- **Format**: The output log file will be in `.csv` format.
 - **Columns**:
   1. **PID**: The process ID of the script.
   2. **RunTime in ms**: The time taken for the script to execute in milliseconds.
   3. **Number of files copied**: The number of files copied during the current run.
-
-## Script Logic
-The script follows this logic:
-
-1. **Input Validation**: 
-   - Checks if both source and destination directories are provided.
-   - Validates that the destination directory contains at least one vowel in its name.
-
-2. **File Comparison**: 
-   - Compares files in the source directory with those in the destination directory.
-   - Only copies files that are new or have been updated since the last backup.
-
-3. **File Copying**: 
-   - Copies the eligible files from the source to the destination directory.
-   - Tracks the number of files copied during the operation.
-
-4. **Logging**: 
-   - Logs the process ID (PID), execution time (in milliseconds), and the number of files copied to the specified `.csv` output file.
 
 ## Requirements
 - **Bash**: This script should be run in a Unix-like environment with Bash available.
