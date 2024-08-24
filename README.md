@@ -1,27 +1,57 @@
-# Shell_scripting
+# File Backup Script
+
 ## Overview
-The script is designed to back up files from a source directory to a destination directory that contains an vowel, while ensuring that only updated or new files are copied. 
-It tracks the number of changed files and logs the execution time to a specified output file.
+This shell script is designed to back up files that contains a vowel from a source directory to a destination directory . It ensures that only updated or new files are copied, tracks the number of changed files, and logs the execution time to a specified output file.
 
-## Commands to run the code
+## Features
+- **Selective Backup**: Only copies files that are new or have been updated since the last backup.
+- **Logging**: Optionally logs the number of changed files and execution time to an output file.
 
-| Options | Arguments | Requirement |
-| -------- | -------- | -------- |
-| s | Source Directory | Required |
-| d | Destination Directory | Required |
-| o | Output File path for storing script statistics | Optional |
+## Output Log File
 
-### Example Usage
+- **Format**: The output log file will be in `.csv` format. If the file is being created for the first time, it's recommended to delete any existing file to ensure labels are added correctly.
+- **Columns**:
+  1. **PID**: The process ID of the script.
+  2. **RunTime in ms**: The time taken for the script to execute in milliseconds.
+  3. **Number of files copied**: The number of files copied during the current run.
 
-To Run use `./Assignment_1.sh -s <Source_Directory> -d <Destination_Directory> -o(optional) <Output_File>`.
+## Script Logic
+The script follows this logic:
 
-## Setting up CronJobs
+1. **Input Validation**: 
+   - Checks if both source and destination directories are provided.
+   - Validates that the destination directory contains at least one vowel in its name.
 
-To install cron run `sudo apt-get install cron`
+2. **File Comparison**: 
+   - Compares files in the source directory with those in the destination directory.
+   - Only copies files that are new or have been updated since the last backup.
 
-Run `crontab -e` to view the currently executing cronjobs
+3. **File Copying**: 
+   - Copies the eligible files from the source to the destination directory.
+   - Tracks the number of files copied during the operation.
 
-To run script file at 12 a.m Everyday
+4. **Logging**: 
+   - Logs the process ID (PID), execution time (in milliseconds), and the number of files copied to the specified `.csv` output file.
 
-Add the line to the file `0 12 * * * <script_path> -s <Source_Directory> -d <Destination_Directory> -o <Output_File>`
+## Requirements
+- **Bash**: This script should be run in a Unix-like environment with Bash available.
+- **Cron**: For automated execution, ensure that cron is installed and running.
+
+## Usage
+
+### Command-Line Options
+
+| Option | Argument | Description | Requirement |
+| ------ | -------- | ----------- | ----------- |
+| `-s`   | Source Directory | Path to the directory containing the files to be backed up | Required |
+| `-d`   | Destination Directory | Path to the backup directory (must contain a vowel in its name) | Required |
+| `-o`   | Output File | Path to the file where script statistics (number of changed files, execution time) will be logged | Optional |
+
+### Example Command
+
+To run the script, use the following command:
+
+```bash
+./Assignment_1.sh -s <Source_Directory> -d <Destination_Directory> -o <Output_File>
+
 
