@@ -28,8 +28,8 @@ fi
 
 pid=$$
 filecount=0
-IFS=$'\n'
 start_time=$(date +%s%3N)
+IFS=$'\n'
 for file in $(find "$source_directory" -type f -name '.*[aeiouAEIOU].*')
 	do
 	source_directory="${source_directory%/}"
